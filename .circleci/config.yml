@@ -27,7 +27,7 @@ jobs:
       # - run: aws s3 sync . s3://mybucket-${CIRCLE_WORKFLOW_ID:0:7} --delete
 # Fetch and save the pipeline ID (bucket ID) responsible for the last release.
 
-  get_last_deployment-id:
+  get_last_deployment_id:
     docker:
       - image: amazon/aws-cli
     steps:
@@ -83,8 +83,8 @@ workflows:
         - promote_to_production:
             requires: 
               - create_and_deploy_front_end
-              - get_last_deployment-id
+        - get_last_deployment_id
         - clean_up_old_front_end:
             requires:
-              - get_last_deployment-id
+              - get_last_deployment_id
               - promote_to_production
