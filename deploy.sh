@@ -1,4 +1,4 @@
 aws cloudformation deploy  \
 --template-file cloudfront.yml  \
 --stack-name production-distro  \
---parameter-overrides PipelineID="$1"
+--parameter-overrides PipelineID="1100691979"
